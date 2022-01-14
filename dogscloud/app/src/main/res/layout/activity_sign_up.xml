@@ -73,7 +73,7 @@
           android:src="@drawable/ic_email" />
 
       <EditText
-          android:id="@+id/emailinput"
+          android:id="@+id/edittext_email"
           android:layout_width="wrap_content"
           android:layout_height="match_parent"
           android:layout_weight="2"
@@ -107,7 +107,7 @@
           android:src="@drawable/ic_useroutline" />
 
       <EditText
-          android:id="@+id/nameinput"
+          android:id="@+id/edittext_name"
           android:layout_width="wrap_content"
           android:layout_height="match_parent"
           android:layout_weight="2"
@@ -141,7 +141,7 @@
           android:src="@drawable/ic_useroutline" />
 
       <EditText
-          android:id="@+id/lastnameinput"
+          android:id="@+id/edittext_lastname"
           android:layout_width="wrap_content"
           android:layout_height="match_parent"
           android:layout_weight="2"
@@ -175,7 +175,7 @@
           android:src="@drawable/ic_dni" />
 
       <EditText
-          android:id="@+id/dniinput"
+          android:id="@+id/edittext_dni"
           android:layout_width="wrap_content"
           android:layout_height="match_parent"
           android:layout_weight="2"
@@ -209,7 +209,7 @@
           android:src="@drawable/ic_age" />
 
       <EditText
-          android:id="@+id/ageinput"
+          android:id="@+id/edittext_edad"
           android:layout_width="wrap_content"
           android:layout_height="match_parent"
           android:layout_weight="2"
@@ -243,7 +243,7 @@
           android:src="@drawable/ic_password" />
 
       <EditText
-          android:id="@+id/passwordinput"
+          android:id="@+id/edittext_password"
           android:layout_width="wrap_content"
           android:layout_height="match_parent"
           android:layout_weight="2"
@@ -258,7 +258,7 @@
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonSignIn"
+        android:id="@+id/btn_register"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="35dp"
@@ -270,7 +270,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:text="@string/ya_tienes_cuenta"
         android:textColor="@color/white"
         android:textStyle="bold" />

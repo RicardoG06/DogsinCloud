@@ -92,7 +92,7 @@
                 app:tint="@color/primaryColor" />
 
             <EditText
-                android:id="@+id/userInput"
+                android:id="@+id/edittext_email"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -128,7 +128,7 @@
                 app:tint="@color/primaryColor" />
 
             <EditText
-                android:id="@+id/passwordInput"
+                android:id="@+id/edittext_password"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -174,7 +174,7 @@
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonSignIn"
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="35dp"
