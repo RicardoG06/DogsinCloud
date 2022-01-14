@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">dogscloud</string>
+    <string name="login">Login</string>
+    <string name="fraselogin">Inicia sesión para que empecemos este paseo!</string>
+    <string name="forgetPassword">¿Olvidaste tu contraseña?</string>
+    <string name="newaccount">Crear nueva cuenta</string>
+    <string name="frasesignup">Registrate , así podemos conocerte mejor</string>
+    <string name="registrar">Registrar</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes cuenta?</string>
+    <string name="no_tienes_cuenta">¿No tienes cuenta?</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+</resources>

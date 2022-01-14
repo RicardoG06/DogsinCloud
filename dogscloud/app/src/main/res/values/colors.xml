@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <color name="primaryColor">#BF0F61</color>
+    <color name="secondaryColor">#731A6D</color>
+    <color name="skyblue">#8EF0F7</color>
+    <color name="green">#7CFD67</color>
+    <color name="yellow">#E9E096</color>
+    <color name="pink">#E3D2FF</color>
+    <color name="gray">#C2C2C2</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grayDark">#686868</color>
+
+
+
+</resources>

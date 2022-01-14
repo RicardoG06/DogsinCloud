@@ -1,0 +1,21 @@
+{
+  "name": "backend-dogs-in-cloud",
+  "version": "1.0.0",
+  "description": "Backend para la aplicacion Dogs in cloud",
+  "main": "server.js",
+  "scripts": {
+    "test": "\u001b[6~"
+  },
+  "keywords": [
+    "kotlin",
+    "dogs",
+    "nodejs"
+  ],
+  "author": "MEJARD",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0"
+  }
+}
