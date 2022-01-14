@@ -4,7 +4,13 @@ const http = require('http');
 const server = http.createServer(app);
 const logger = require('morgan');
 const cors = require('cors');
-const e = require('express');
+const passport = require('passport')
+
+/*    RUTAS      */
+
+const users = require('./routes/usersRoutes');
+
+/* FIN DE RUTAS */
 
 const port = process.env.PORT || 3000;
 
@@ -13,18 +19,25 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
+
 app.use(cors());
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
 
 app.disable('x-powered-by')
 
 app.set('port',port);
 
+/* Llamada a la app */
+
+users(app);
+
+/* Fin de llamada a la app */
+
 server.listen(3000, '192.168.1.73' || 'localhost',function(){
     console.log('Aplicacion de NodeJS ' + process.pid + ' Iniciada...')
-});
-
-app.get('/',(req,res) => {
-    res.send('Ruta raiz del backend');
 });
 
 // ERROR HANDLER
@@ -33,6 +46,11 @@ app.use((err, req , res, next) => {
     console.log(err);
     res.status(err.status || 500).send(err.stack);
 })
+
+module.exports = {
+    app: app,
+    server : server
+}
 
 // 200 - Respuesta exitosa
 // 400 Significa que la URL no existe

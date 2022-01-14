@@ -14,8 +14,15 @@
   "author": "MEJARD",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "morgan": "^1.10.0"
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pg-promise": "^10.11.1",
+    "retrofit": "^0.2.11"
   }
 }

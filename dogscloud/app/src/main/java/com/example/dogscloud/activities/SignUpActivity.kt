@@ -7,16 +7,22 @@ import android.widget.Button
 import com.example.dogscloud.R
 
 class SignUpActivity : AppCompatActivity() {
+
+    var botonGoToSingIn: Button? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        val boton = findViewById<Button>(R.id.buttonLogIn)
-        boton.setOnClickListener{
+        botonGoToSingIn = findViewById(R.id.buttonLogIn)
 
-            val lanzar = Intent(this,SignInActivity::class.java)
-            startActivity(lanzar)
-
+        botonGoToSingIn?.setOnClickListener{
+            goToSignIn()
         }
+    }
+
+    private fun goToSignIn(){
+        val i = Intent(this,SignInActivity::class.java)
+        startActivity(i)
     }
 }
