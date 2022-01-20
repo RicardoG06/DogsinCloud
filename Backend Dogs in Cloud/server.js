@@ -9,6 +9,7 @@ const passport = require('passport')
 /*    RUTAS      */
 
 const users = require('./routes/usersRoutes');
+const trabajador = require('./routes/trabajadorRoutes');
 
 /* FIN DE RUTAS */
 
@@ -33,6 +34,7 @@ app.set('port',port);
 /* Llamada a la app */
 
 users(app);
+trabajador(app);
 
 /* Fin de llamada a la app */
 

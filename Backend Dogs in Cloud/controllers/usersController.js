@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Rol_ad_us = require('../models/rol_ad_usu')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../config/keys');
@@ -25,12 +26,28 @@ module.exports = {
             const user = req.body;
             const data = await User.create(user);
 
+            await Rol_ad_us.create(data.id, 1);
+
+            const token = jwt.sign({ id: data.id, email: user.email }, keys.secretOrKey, {
+                // expiresIn:
+            })
+
+            const myData = {
+                id: data.id,
+                name: user.name,
+                lastname: user.lastname,
+                email: user.email,
+                dni: user.dni,
+                edad: user.edad,
+                phone: user.phone,
+                image: user.image,
+                session_token: `JWT ${token}`
+            };
+
             return res.status(201).json({
                 success: true,
                 message: 'El registro se realizo correctamente',
-                data: {
-                    'id': data.id
-                }
+                data:myData
             });
         } catch (error) {
             console.log(`Error: ${error}`);
@@ -72,8 +89,11 @@ module.exports = {
                     edad: myUser.edad,
                     phone: myUser.phone,
                     image: myUser.image,
-                    session_token: `JWT ${token}`
+                    session_token: `JWT ${token}`,
+                    roles: myUser.roles
                 };
+
+                console.log(`USUARIO ENVIADO ${data}`);
 
                 return res.status(201).json({
                     success: true,

@@ -9,9 +9,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.dogscloud.R
+import com.example.dogscloud.activities.client.home.AnuncioUnoActivity
 import com.example.dogscloud.models.ResponseHttp
 import com.example.dogscloud.models.User
 import com.example.dogscloud.providers.UsersProvider
+import com.example.dogscloud.utils.SharedPref
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -72,6 +75,12 @@ class SignUpActivity : AppCompatActivity() {
             usersProvider.register(user)?.enqueue(object: Callback<ResponseHttp> {
                 override fun onResponse(call: Call<ResponseHttp>, response: Response<ResponseHttp>
                 ) {
+
+                    if(response.body()?.isSuccess == true){
+                        saveUserInSession(response.body()?.data.toString())
+                        goToRecommendation()
+                    }
+
                     Toast.makeText(this@SignUpActivity, response.body()?.message, Toast.LENGTH_LONG).show()
                     Log.d("SignUpActivity", "Response: ${response}")
                     Log.d("SignUpActivity", "Body: ${response.body()}")
@@ -90,6 +99,13 @@ class SignUpActivity : AppCompatActivity() {
         Log.d( "SignUpActivity", "El dni es: $dni" )
         Log.d( "SignUpActivity", "El apellido es: $lastname" )
         Log.d( "SignUpActivity", "La edad es: $edad" )
+    }
+
+    private fun saveUserInSession(data: String){
+        val sharedPref = SharedPref(this)
+        val gson = Gson()
+        val user = gson.fromJson(data, User::class.java)
+        sharedPref.save("user", user)
     }
 
     fun String.isEmailValid(): Boolean{
@@ -135,6 +151,11 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun goToSignIn(){
         val i = Intent(this,SignInActivity::class.java)
+        startActivity(i)
+    }
+
+    private fun goToRecommendation(){
+        val i = Intent(this, AnuncioUnoActivity::class.java)
         startActivity(i)
     }
 }

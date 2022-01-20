@@ -9,7 +9,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.dogscloud.R
+import com.example.dogscloud.activities.Fragments.menu.InicioFragment
+import com.example.dogscloud.activities.client.home.AnuncioUnoActivity
 import com.example.dogscloud.activities.client.home.ClientHomeActivity
+import com.example.dogscloud.activities.client.home.MainActivity
 import com.example.dogscloud.models.ResponseHttp
 import com.example.dogscloud.models.User
 import com.example.dogscloud.providers.UsersProvider
@@ -61,7 +64,7 @@ class SignInActivity : AppCompatActivity() {
                         Toast.makeText(this@SignInActivity, response.body()?.message, Toast.LENGTH_LONG).show()
 
                         saveUserInSession(response.body()?.data.toString())
-                        goToClientHome()
+                        goToRecommendation()
                     }
                     else{
                         Toast.makeText(this@SignInActivity,"Los datos no son correctos", Toast.LENGTH_LONG).show()
@@ -115,7 +118,6 @@ class SignInActivity : AppCompatActivity() {
 
             goToClientHome()
         }
-
     }
 
     private fun goToSignUp(){
@@ -124,7 +126,13 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun goToClientHome(){
-        val i = Intent(this, ClientHomeActivity::class.java)
+        val i = Intent(this, MainActivity::class.java)
         startActivity(i)
     }
+
+    private fun goToRecommendation(){
+        val i = Intent(this, AnuncioUnoActivity::class.java)
+        startActivity(i)
+    }
+
 }

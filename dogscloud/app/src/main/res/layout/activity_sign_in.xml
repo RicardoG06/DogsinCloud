@@ -33,8 +33,6 @@
         android:id="@+id/icon_company"
         android:layout_width="88dp"
         android:layout_height="82dp"
-
-
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -14,11 +14,26 @@
         android:theme="@style/Theme.Dogscloud"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.client.home.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.client.home.SugerenciaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.client.home.AnuncioTresActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.client.home.AnuncioDosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.client.home.AnuncioUnoActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.client.home.ClientHomeActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activities.SignUpActivity"
-            android:exported="false"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.SignInActivity"
